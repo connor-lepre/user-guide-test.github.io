@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage an active case</title><link rel="stylesheet" href="acdhs.css">
+<style>
+  html{scroll-behavior:smooth;}
+  .notice{background:var(--yellow);color:#5c4112;}
+  .notice .wrap-narrow{display:flex;align-items:center;gap:10px;padding:9px 24px;font-size:13.5px;font-weight:700;}
+  .notice .dot{width:8px;height:8px;border-radius:50%;background:#8a6212;flex:none;}
+  .hero{padding:32px 0 8px;}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 22px;}
+  .panel{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;}
+  .panel h3{margin:0 0 10px;font-size:15px;font-weight:700;color:var(--dark-blue);}
+  .panel p,.panel li{color:var(--slate);font-size:15px;} .panel ul{margin:0;padding-left:18px;} .panel li{margin-bottom:7px;}
+  .access{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--ash);border-left:5px solid var(--light-blue);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin:0 0 26px;}
+  .access .ic{width:40px;height:40px;border-radius:10px;background:#EEF0FB;display:flex;align-items:center;justify-content:center;flex:none;}
+  .access .ic svg{width:21px;height:21px;stroke:var(--blue);}
+  .access h3{margin:0 0 4px;font-size:16px;color:var(--dark-blue);} .access p{margin:0;color:var(--slate);font-size:15px;}
+  .access .corr{margin-top:8px;font-size:13.5px;color:#8a6212;background:#FBF3E2;border-radius:8px;padding:8px 12px;}
+  .life{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin:0 0 30px;}
+  .life h3{margin:0 0 12px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--stone);}
+  .lifeflow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+  .lifestep{background:var(--smoke);border:1px solid var(--ash);border-radius:20px;padding:7px 13px;font-size:13px;font-weight:700;color:var(--dark-blue);}
+  .lifearrow{color:var(--light-blue);font-weight:700;}
+  .buckets{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .bucket{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;color:inherit;transition:transform .12s,border-color .12s;}
+  a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);text-decoration:none;}
+  .bucket .top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+  .bucket .bic{width:36px;height:36px;border-radius:9px;background:#EEF0FB;display:flex;align-items:center;justify-content:center;flex:none;}
+  .bucket .bic svg{width:20px;height:20px;stroke:var(--blue);fill:none;}
+  .bucket .bt{font-size:17px;font-weight:700;color:var(--dark-blue);}
+  .bucket .count{margin-left:auto;font-size:12px;font-weight:700;color:var(--stone);background:var(--smoke);border:1px solid var(--ash);border-radius:20px;padding:3px 10px;white-space:nowrap;}
+  .bucket .bd{font-size:14px;color:var(--slate);margin:0 0 12px;} .bucket .go{margin-top:auto;font-size:13.5px;font-weight:700;color:var(--blue);}
+  .stat{display:inline-flex;align-items:baseline;gap:8px;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px 18px;margin:0 0 26px;font-size:14px;color:var(--slate);}
+  .stat b{font-size:22px;color:var(--dark-blue);}
+  /* task pages */
+  .subnav{position:sticky;top:60px;z-index:10;display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:rgba(245,245,255,.94);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid var(--ash);border-radius:14px;padding:10px 14px;margin:0 0 24px;}
+  .subnav .lab{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--stone);width:100%;margin-bottom:2px;}
+  .subnav a{display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--ash);border-radius:20px;padding:5px 11px;font-size:12.5px;font-weight:700;color:var(--slate);}
+  .subnav a:hover{border-color:var(--blue);color:var(--dark-blue);text-decoration:none;}
+  .subnav a .n{width:17px;height:17px;border-radius:50%;background:var(--blue);color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center;}
+  .screen{scroll-margin-top:150px;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden;}
+  details.screen>summary{display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;list-style:none;}
+  details.screen>summary::-webkit-details-marker{display:none;}
+  details.screen>summary:hover{background:var(--smoke);}
+  .snum{width:28px;height:28px;border-radius:8px;background:var(--blue);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .stitle{font-size:16.5px;font-weight:700;color:var(--dark-blue);flex:1;min-width:0;}
+  .datetag{font-size:11px;font-weight:700;border-radius:20px;padding:3px 9px;white-space:nowrap;}
+  .datetag.old{background:#FBF3E2;color:#8a6212;} .datetag.ok{background:var(--smoke);color:var(--stone);border:1px solid var(--ash);}
+  .chev{width:18px;height:18px;stroke:var(--light-blue);transition:transform .2s;flex:none;}
+  details.screen[open] .chev{transform:rotate(180deg);}
+  .sbody{padding:2px 20px 22px;border-top:1px solid var(--smoke);}
+  .sbody .purpose{font-size:15px;color:var(--slate);margin:14px 0 4px;}
+  .screen.card .sbody{border-top:none;padding-top:0;}
+  .screen.card .shead{display:flex;align-items:center;gap:13px;padding:16px 20px 0;}
+  h4.sh{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--stone);margin:20px 0 10px;}
+  ol.steps{margin:0;padding-left:0;counter-reset:step;list-style:none;}
+  ol.steps li{position:relative;padding:0 0 14px 40px;counter-increment:step;font-size:15px;color:var(--black);}
+  ol.steps li::before{content:counter(step);position:absolute;left:0;top:-2px;width:26px;height:26px;border-radius:50%;background:var(--light-blue);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  ol.steps li b{color:var(--black);}
+  dl.fields{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0;}
+  dl.fields div{display:contents;}
+  dl.fields dt{font-weight:700;color:var(--dark-blue);font-size:14px;padding:8px 16px 8px 0;border-top:1px solid var(--smoke);white-space:nowrap;}
+  dl.fields dd{margin:0;color:var(--slate);font-size:14.5px;padding:8px 0;border-top:1px solid var(--smoke);}
+  dl.fields div:first-child dt,dl.fields div:first-child dd{border-top:none;}
+  .recover{border:1px solid var(--ash);border-radius:10px;overflow:hidden;}
+  .recover .rh{background:var(--dark-blue);color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:10px 15px;}
+  .recover table{width:100%;border-collapse:collapse;font-size:14px;}
+  .recover td{padding:10px 15px;border-top:1px solid var(--ash);vertical-align:top;color:var(--slate);}
+  .recover tr td:first-child{font-weight:700;color:var(--black);width:42%;}
+  .recover .yes{font-weight:700;color:var(--dark-blue);background:#EAF9F4;padding:2px 8px;border-radius:6px;font-size:12px;}
+  .recover .chk{font-weight:700;color:#8a6212;background:#FBF3E2;padding:2px 8px;border-radius:6px;font-size:12px;}
+  .note{font-size:14px;color:var(--slate);background:var(--smoke);border-left:4px solid var(--light-blue);border-radius:8px;padding:11px 14px;margin-top:16px;}
+  .note b{color:var(--dark-blue);}
+  .srclink{margin-top:14px;font-size:13px;} .srclink a{font-weight:700;}
+  .why{font-size:15px;color:var(--slate);background:var(--white);border:1px solid var(--ash);border-left:5px solid var(--blue);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:0 0 22px;}
+  .why b{color:var(--dark-blue);}
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 22px;}
+  .rule{background:var(--white);border:1px solid var(--ash);border-radius:10px;box-shadow:var(--shadow);padding:14px 16px;}
+  .rule b{display:block;color:var(--dark-blue);font-size:14px;margin-bottom:3px;} .rule span{font-size:13.5px;color:var(--slate);}
+  .contacts{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin:26px 0 14px;}
+  .contacts .row{display:flex;gap:18px;padding:13px 22px;border-top:1px solid var(--smoke);font-size:15px;} .contacts .row:first-of-type{border-top:none;}
+  .contacts dt{flex:0 0 150px;font-weight:700;color:var(--dark-blue);margin:0;} .contacts dd{margin:0;color:var(--slate);}
+  .report{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);padding:18px 22px;display:flex;align-items:center;gap:14px;margin-bottom:10px;box-shadow:var(--shadow);}
+  .report .ic{width:38px;height:38px;border-radius:9px;background:#FCEDEC;display:flex;align-items:center;justify-content:center;flex:none;}
+  .report .ic svg{width:20px;height:20px;stroke:#c0564f;} .report b{display:block;font-size:15px;color:var(--black);} .report p{margin:1px 0 0;font-size:13.5px;color:var(--stone);} .report .btn{margin-left:auto;}
+  @media (max-width:680px){.twocol,.buckets,.rules{grid-template-columns:1fr;} dl.fields{grid-template-columns:1fr;} dl.fields dt{padding-bottom:0;border-top:1px solid var(--smoke);} dl.fields dd{padding-top:2px;border-top:none;} .report{flex-wrap:wrap;} .report .btn{margin-left:0;width:100%;} .access{flex-wrap:wrap;}}
+</style>
+</head><body>
+<div class="topbar"><div class="wrap-narrow">
+  <div class="brand">Allegheny County DHS <span>· Application Support</span></div>
+  <nav class="nav" aria-label="Sections"><a href="dhs-sitemap.html">Site map</a><a href="index.html">Get help</a><a href="mh-residential-landing.html" class="active">MH Residential</a></nav>
+</div></div><div class="notice"><div class="wrap-narrow"><span class="dot"></span><span>Several screens below were last reviewed years ago — each carries its own review date.</span></div></div><main class="wrap-narrow"><div class="crumb"><a href="mh-residential-landing.html">MH Residential</a> › <b>Manage an active case</b></div><section class="hero"><p class="eyebrow">MH Residential · Task guide</p><h1>Manage an active case</h1><p class="lede">Once a consumer is placed, the referral becomes a case. Work it from the Case Summary hub.</p><div class="trust"><div><div class="k">Tool</div><div class="v">MH Residential</div></div><div><div class="k">Access</div><div class="v">Okta</div></div><div><div class="k">Last reviewed</div><div class="v">Mixed — see each screen</div></div><div><div class="k">Status</div><div class="v warn">Needs review</div></div></div></section><div class="why"><b>The case reuses the referral screens.</b> Individual Info, Referral Info, Treatment History, Risk Factors and Legal History look the same on a case as on a referral — they’re documented on the <a href="mh-res-make-referral.html">Create &amp; complete a referral</a> page. The two screens unique to a case are below.</div><section class="screen card" id="case_summary"><div class="shead"><span class="stitle">Case Summary (the case hub)</span><span class="datetag old">Reviewed 2017</span></div><div class="sbody"><p class="purpose">The home base of an active case. Shows placement and status information, and is where supervisors edit it, start a transfer, record suspensions, and discharge the consumer.</p><h4 class="sh">What’s on this screen</h4><dl class="fields"><div><dt>Case Summary pane</dt><dd>Placement date, case status, provider agency, assigned worker, priority category, estimated discharge date, and bed information. Supervisors and managers can edit here.</dd></div><div><dt>Next steps</dt><dd>Jump to the consumer's Individual Info, or view all referrals linked to the case.</dd></div><div><dt>Suspensions</dt><dd>Use View/Add Suspension Details to record a bed suspension's start/end dates and reason.</dd></div></dl><h4 class="sh">If something goes wrong</h4><div class="recover"><div class="rh">What to do</div><table><tr><td>Consumer needs to move to a different level of care</td><td><span class="yes">Recoverable</span> — Use Transfer — it creates a new referral (under Pending Referrals) with the case data carried over. Close the case once they're accepted into the new bed.</td></tr><tr><td>Consumer has been discharged</td><td><span class="chk">Check</span> — Set an estimated discharge date, change Case Status to Discharged, then complete the Case Discharge Details (date, reason, notes) to close the case.</td></tr></table></div><div class="srclink"><a href="https://dhsapplicationsupport.alleghenycounty.us/wp-content/uploads/2024/12/case_summary_mh_res.pdf" target="_blank" rel="noopener">View the original PDF ↗</a></div></div></section><section class="screen card" id="case_case_notes"><div class="shead"><span class="stitle">Case Notes</span><span class="datetag old">Reviewed 2017</span></div><div class="sbody"><p class="purpose">Document notes and contacts about the consumer and the case.</p><h4 class="sh">What’s on this screen</h4><dl class="fields"><div><dt>Notes</dt><dd>Select New, type the note, and Save. Notes written during the referral carry over here automatically.</dd></div></dl><div class="srclink"><a href="https://dhsapplicationsupport.alleghenycounty.us/wp-content/uploads/2024/12/case_case_notes_mh_res.pdf" target="_blank" rel="noopener">View the original PDF ↗</a></div></div></section><div class="contacts"><div style="padding:16px 22px 4px"><h2 style="font-size:20px;margin:0">Need help?</h2></div><dl style="margin:0;padding:4px 0 14px"><div class="row"><dt>Service Desk</dt><dd>412-350-4357 · <a href="mailto:dhs-servicedesk@alleghenycounty.us">dhs-servicedesk@alleghenycounty.us</a> — Select Option 2 for the DHS Service Desk.</dd></div><div class="row"><dt>Self-service</dt><dd><a href="https://servicedesk.alleghenycounty.us">servicedesk.alleghenycounty.us</a></dd></div></dl></div><div class="report"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></div><div><b>Out of date or doesn’t match your screen?</b><p>Several of these guides predate the current release. Tell us and Application Support will re-check them.</p></div><button class="btn">Report an issue</button></div></main><footer><div class="wrap-narrow">
+  <div class="meta"><b>MH Residential</b> › Manage an active case · guides span 2017–2024<br>Allegheny County Department of Human Services</div>
+  <div class="flinks"><a href="mh-residential-landing.html">MH Residential home</a><a href="dhs-sitemap.html">All tools</a><a href="mailto:dhs-servicedesk@alleghenycounty.us">Service Desk</a></div>
+</div></footer></body></html>

@@ -312,14 +312,14 @@
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/kidstoo-provider/">Open KIDSTOO Provider guides →</a>
             <div class="jump"><span class="jlab">Jump to a task on the KIDSTOO Provider page</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kidstoo-provider/">Case &amp; service documentation</a></div></div>
           </div>
-        </details><details class="tool" data-family="Synergy" data-progs="Behavioral health|Housing &amp; homelessness" data-updated-bucket="More than a year ago" data-text="mh residential residential referrals, case records and bed management. synergy referrals &amp; placement case &amp; service documentation reports &amp; history enrollment &amp; households admin &amp; configuration plans &amp; meetings">
+        </details><details class="tool" data-family="Synergy" data-progs="Behavioral health|Housing &amp; homelessness" data-updated-bucket="This week" data-text="mh residential residential referrals, case records and bed management. synergy find your work create &amp; complete a referral manage an active case transfers, beds &amp; outcomes documents, sharing &amp; activity forms &amp; checklists">
           <summary class="thead">
             <span class="tmain"><span class="tname">MH Residential</span><span class="tdesc">Residential referrals, case records and bed management.</span><span class="tfam">Synergy</span></span>
             <span class="tright"><span class="tcount">36</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
           </summary>
           <div class="topen">
-            <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/mh-residential/">Open MH Residential guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task on the MH Residential page</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mh-residential/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mh-residential/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mh-residential/">Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mh-residential/">Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mh-residential/">Admin &amp; configuration</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mh-residential/">Plans &amp; meetings</a></div></div>
+            <a class="btn primary" href="mh-residential-landing.html">Open MH Residential guides →</a>
+            <div class="jump"><span class="jlab">Jump to a task on the MH Residential page</span><div class="jlinks"><a href="mh-res-make-referral.html">Create &amp; complete a referral</a><a href="mh-res-manage-case.html">Manage an active case</a><a href="mh-res-transfers-beds.html">Transfers, beds &amp; outcomes</a><a href="mh-res-find-work.html">Find your work</a><a href="mh-res-documents.html">Documents, sharing &amp; activity</a><a href="mh-res-forms.html">Forms &amp; checklists</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="Fiscal &amp; claims" data-updated-bucket="This week" data-text="mper submit program-funded claims; manage contacts and facilities. dhs applications fiscal, claims &amp; invoicing case &amp; service documentation">
           <summary class="thead">
@@ -372,7 +372,6 @@
     upd.className='tupdated'; upd.textContent=' — Last updated: MM/DD/YYYY HH:MM PM';
     fam.after(upd);
   });
-
   // Build the task filter list from each tool's own jump-link labels, deduped, first-seen order,
   // then arrange by the fixed priority order shown in the design reference (leftover labels go last).
   const taskLabels=[];
@@ -391,9 +390,7 @@
     b.className='filteritem'; b.dataset.task=lbl; b.textContent=lbl;
     taskFilterEl.appendChild(b);
   });
-
   let progSet=new Set(), famSet=new Set(), taskSet=new Set(), q="", sortMode="alpha";
-
   function apply(){
     let shown=0;
     tools.forEach(t=>{
@@ -418,7 +415,6 @@
     if(q)bits.push('“'+q+'”');
     fnote.innerHTML = bits.length ? ('Showing '+shown+' tools · '+bits.join(' · ')) : '';
   }
-
   function renderSort(){
     document.querySelectorAll('.grouplabel').forEach(g=>g.remove());
     if(sortMode==='updated'){
@@ -443,7 +439,6 @@
     }
     apply();
   }
-
   document.querySelectorAll('.prog').forEach(p=>p.onclick=()=>{
     const v=p.dataset.prog;
     progSet.has(v)?progSet.delete(v):progSet.add(v);
@@ -475,7 +470,6 @@
     apply();
   };
   document.getElementById('clear').onclick=clearAll;
-
   renderSort();
 </script>
 </body></html>
