@@ -38,6 +38,31 @@ a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);box-sha
 .bucket .steps{font-size:13px;color:var(--stone);}
 .bucket .go{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--blue);}
 
+/* tool landing: guides section with a By task / By process switch (switch appears once JS runs) */
+.guides-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 16px;margin:0 0 16px;}
+.guides-head h2{margin:0;}
+.viewswitch{display:none;}
+.guides.ready .viewswitch{display:inline-flex;gap:2px;padding:3px;background:#EEF0FB;border-radius:10px;}
+.viewswitch button{font:inherit;font-size:13px;font-weight:700;color:var(--slate);background:none;border:0;border-radius:8px;padding:6px 13px;cursor:pointer;}
+.viewswitch button:hover{color:var(--dark-blue);}
+.viewswitch button[aria-selected="true"]{background:var(--white);color:var(--blue);box-shadow:0 1px 2px rgba(18,18,33,.14);}
+.guides:not(.ready) .guides-view+.guides-view{margin-top:16px;}
+/* process view: one row per lifecycle stage; "At any time" sits outside the lifecycle, last */
+.bystage{list-style:none;margin:0;padding:0;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+.stage{display:grid;grid-template-columns:220px 1fr;gap:16px;padding:14px 20px;border-top:1px solid var(--smoke);}
+.stage:first-child{border-top:none;}
+.stage.anytime{border-top:1px solid var(--ash);background:#FAFAFF;}
+.stage-k{display:flex;align-items:flex-start;gap:10px;}
+.stage-n{flex:none;width:20px;height:20px;margin-top:1px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--stone);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;line-height:1;color:var(--stone);}
+.anytime .stage-n{box-shadow:none;border:1px dashed var(--stone);}
+.stage-name{margin:0;font-size:14.5px;line-height:1.35;font-weight:700;color:var(--dark-blue);}
+.stage-q{display:block;font-size:12px;color:var(--stone);}
+.stage-guides{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
+.stage-guides li{display:flex;flex-direction:column;}
+.stage-guides a{font-size:14.5px;font-weight:700;line-height:1.35;}
+.g-meta{font-size:12.5px;color:var(--stone);}
+.stage-empty{margin:0;font-size:13.5px;color:var(--stone);padding-top:1px;}
+
 /* task guide: screen cards */
 .screen{scroll-margin-top:150px;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden;}
 .screen.card .shead{display:flex;align-items:center;gap:13px;padding:16px 20px 0;}
@@ -88,6 +113,7 @@ dl.fields div:first-child dt,dl.fields div:first-child dd{border-top:none;}
 
 @media (max-width:680px){
   .buckets{grid-template-columns:1fr;}
+  .stage{grid-template-columns:1fr;gap:8px;padding:12px 16px;}
   dl.fields{grid-template-columns:1fr;} dl.fields dt{padding-bottom:0;border-top:1px solid var(--smoke);} dl.fields dd{padding-top:2px;border-top:none;}
 }
 
