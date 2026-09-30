@@ -49,16 +49,18 @@ a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);box-sha
 .guides:not(.ready) .guides-view+.guides-view{margin-top:16px;}
 /* process view: one row per lifecycle stage; "At any time" sits outside the lifecycle, last */
 .bystage{list-style:none;margin:0;padding:0;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
-.stage{display:grid;grid-template-columns:220px 1fr;gap:16px;padding:14px 20px;border-top:1px solid var(--smoke);}
+.stage{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:14px 20px;border-top:1px solid var(--smoke);}
 .stage:first-child{border-top:none;}
 .stage.anytime{border-top:1px solid var(--ash);background:#FAFAFF;}
-.stage-k{display:flex;align-items:flex-start;gap:10px;}
-.stage-n{flex:none;width:20px;height:20px;margin-top:1px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--stone);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;line-height:1;color:var(--stone);}
+/* stage label: same ring, size and weight as the lifecycle diagram */
+.stage-k{display:flex;align-items:flex-start;gap:8px;}
+.stage-n{flex:none;width:15px;height:15px;margin-top:1px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--stone);display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700;line-height:1;color:var(--stone);}
 .anytime .stage-n{box-shadow:none;border:1px dashed var(--stone);}
-.stage-name{margin:0;font-size:14.5px;line-height:1.35;font-weight:500;color:var(--slate);}
-.stage-q{display:block;font-size:12px;color:var(--stone);}
-/* links: navy rather than the action blue, so a long list stays calm; icon marks guide vs step */
-.stage-guides{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
+.stage-name{margin:0;font-size:13px;line-height:1.3;font-weight:500;color:var(--slate);}
+.stage-q{display:block;font-size:11.5px;color:var(--stone);}
+/* links: two columns; long titles wrap. Navy rather than the action blue, so a long list stays calm;
+   the icon marks guide vs step */
+.stage-guides{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;align-items:start;}
 .stage-guides li{display:grid;grid-template-columns:15px 1fr;column-gap:8px;}
 .stage-guides li>div{display:flex;flex-direction:column;min-width:0;}
 .stage-guides a{font-size:14.5px;font-weight:700;line-height:1.35;color:var(--dark-blue);}
@@ -122,6 +124,7 @@ dl.fields div:first-child dt,dl.fields div:first-child dd{border-top:none;}
 @media (max-width:680px){
   .buckets{grid-template-columns:1fr;}
   .stage{grid-template-columns:1fr;gap:8px;padding:12px 16px;}
+  .stage-guides{grid-template-columns:1fr;}
   dl.fields{grid-template-columns:1fr;} dl.fields dt{padding-bottom:0;border-top:1px solid var(--smoke);} dl.fields dd{padding-top:2px;border-top:none;}
 }
 
