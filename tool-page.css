@@ -90,3 +90,21 @@ dl.fields div:first-child dt,dl.fields div:first-child dd{border-top:none;}
   .buckets{grid-template-columns:1fr;}
   dl.fields{grid-template-columns:1fr;} dl.fields dt{padding-bottom:0;border-top:1px solid var(--smoke);} dl.fields dd{padding-top:2px;border-top:none;}
 }
+
+/* print: every section open and sequential; avoid splitting a heading from its content */
+@media print{
+  .notice{background:none;border:1px solid #999;border-radius:6px;margin-bottom:8px;}
+  .notice .wrap-narrow{padding:6px 10px;}
+  .hero{padding:6px 0 0;}
+  .lede{font-size:14px;margin-bottom:12px;}
+  .screen{overflow:visible;border-color:#999;border-radius:8px;margin-bottom:10px;}
+  .screen.card .shead{break-after:avoid;}
+  h4.sh{break-after:avoid;}
+  ol.steps li,.note,.recover tr,dl.fields dd,.res,.why{break-inside:avoid;}
+  dl.fields dt{break-after:avoid;}
+  .recover{overflow:visible;border-color:#999;}
+  .recover .rh{background:none;color:#000;border-bottom:1px solid #999;}
+  .recover td{border-top-color:#ccc;}
+  .contacts{border-color:#999;break-inside:avoid;}
+  .srclink,.report,.subnav{display:none!important;}
+}
