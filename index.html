@@ -99,9 +99,11 @@
   .topen{padding:2px 18px 18px;border-top:1px solid var(--smoke);}
   .topen .btn.primary{display:inline-block;margin:14px 0;}
   .jump .jlab{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--stone);margin-bottom:8px;}
-  .jlinks{display:flex;flex-wrap:wrap;gap:8px;}
-  .jlinks a{background:var(--smoke);border:1px solid var(--ash);border-radius:8px;padding:8px 12px;font-size:13px;font-weight:500;color:var(--slate);}
-  .jlinks a:hover{border-color:var(--blue);color:var(--dark-blue);background:var(--white);text-decoration:none;}
+  /* same link pattern as the guides-by-process list: icon + navy title, no description */
+  .jlinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px 20px;}
+  .jlinks a{display:flex;align-items:flex-start;gap:8px;font-size:13px;font-weight:700;line-height:1.35;color:var(--dark-blue);}
+  .jlinks a .lk-icon{margin-top:1px;}
+  .jlinks a:hover{color:var(--blue);text-decoration:underline;}
   .tool.hide{display:none;}
   /* Empty state — sits where the first tool card would, but reads as a placeholder, not a result. */
   .empty{display:none;text-align:center;background:var(--white);border:1px solid var(--ash);border-radius:18px;padding:48px 24px;margin:0 0 12px;}
@@ -197,7 +199,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="ansa-landing.html">Open ANSA guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="ansa-landing.html#get-started">Get started</a><a href="ansa-landing.html#find-register">Find &amp; register a client</a><a href="ansa-landing.html#document-assessment">Document an assessment</a><a href="ansa-landing.html#reports">Reports &amp; history</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="ansa-landing.html#get-started"><span class="lk-icon lk-guide" aria-hidden="true"></span>Get started</a><a href="ansa-find-register-client.html"><span class="lk-icon lk-guide" aria-hidden="true"></span>Find &amp; register a client</a><a href="ansa-landing.html#document-assessment"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="ansa-landing.html#reports"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Assessments" data-progs="Behavioral health|Assessments" data-updated-bucket="This week">
           <summary class="thead">
@@ -206,7 +208,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/">Open CANS guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/">Getting access &amp; signing in</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/">Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/">Supervisor &amp; approvals</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/">Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/">Find &amp; register a client</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Getting access &amp; signing in</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Supervisor &amp; approvals</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cans/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Find &amp; register a client</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="Fiscal &amp; claims" data-updated-bucket="This month">
           <summary class="thead">
@@ -215,7 +217,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/">Open CIPS guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/">Fiscal, claims &amp; invoicing</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/">Find &amp; register a client</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/">Document an assessment</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Fiscal, claims &amp; invoicing</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Find &amp; register a client</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/cips/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="" data-updated-bucket="This year">
           <summary class="thead">
@@ -224,7 +226,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/clientpath/">Open ClientPath guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/clientpath/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/clientpath/">Referrals &amp; placement</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/clientpath/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/clientpath/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="" data-updated-bucket="More than a year ago">
           <summary class="thead">
@@ -233,7 +235,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/clientview/">Open ClientView guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/clientview/">Reference, FAQs &amp; training</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/clientview/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reference, FAQs &amp; training</a></div></div>
           </div>
         </details><details class="tool" data-family="KIDS" data-progs="Child welfare &amp; youth" data-updated-bucket="This month">
           <summary class="thead">
@@ -242,7 +244,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/courts/">Open Courts guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/courts/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/courts/">Find &amp; register a client</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/courts/">Reports &amp; history</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/courts/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/courts/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Find &amp; register a client</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/courts/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a></div></div>
           </div>
         </details><details class="tool" data-family="Synergy" data-progs="" data-updated-bucket="This year">
           <summary class="thead">
@@ -251,7 +253,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/">Open DHS Self-Sufficiency guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/">Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/">Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/">Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/">Supervisor &amp; approvals</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dhs-self-sufficiency/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Supervisor &amp; approvals</a></div></div>
           </div>
         </details><details class="tool" data-family="Synergy" data-progs="Behavioral health" data-updated-bucket="This year">
           <summary class="thead">
@@ -260,7 +262,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/dragonfly/">Open Dragonfly guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dragonfly/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dragonfly/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dragonfly/">Plans &amp; meetings</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dragonfly/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dragonfly/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/dragonfly/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Plans &amp; meetings</a></div></div>
           </div>
         </details><details class="tool" data-family="Synergy" data-progs="Child welfare &amp; youth" data-updated-bucket="This year">
           <summary class="thead">
@@ -269,7 +271,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/">Open Family Support Centers guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/">Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/">Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/">Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/">Supervisor &amp; approvals</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/">Reports &amp; history</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Supervisor &amp; approvals</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/family-support-centers/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Assessments" data-progs="Assessments" data-updated-bucket="More than a year ago">
           <summary class="thead">
@@ -278,7 +280,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/fast/">Open FAST guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/fast/">Getting access &amp; signing in</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/fast/">Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/fast/">Reports &amp; history</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/fast/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Getting access &amp; signing in</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/fast/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/fast/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="Housing &amp; homelessness" data-updated-bucket="This week">
           <summary class="thead">
@@ -287,7 +289,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/">Open HMIS guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/">Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/">Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/">Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/">Fiscal, claims &amp; invoicing</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/hmis/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Fiscal, claims &amp; invoicing</a></div></div>
           </div>
         </details><details class="tool" data-family="Synergy" data-progs="Child welfare &amp; youth" data-updated-bucket="This year">
           <summary class="thead">
@@ -296,7 +298,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/">Open Independent Living guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/">Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/">Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/">Admin &amp; configuration</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/">Supervisor &amp; approvals</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Admin &amp; configuration</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/independent-living/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Supervisor &amp; approvals</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="" data-updated-bucket="More than a year ago">
           <summary class="thead">
@@ -305,7 +307,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/integrated-monitoring-tool/">Open Integrated Monitoring Tool guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integrated-monitoring-tool/">Reference, FAQs &amp; training</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integrated-monitoring-tool/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reference, FAQs &amp; training</a></div></div>
           </div>
         </details><details class="tool" data-family="Synergy" data-progs="Child welfare &amp; youth" data-updated-bucket="This year">
           <summary class="thead">
@@ -314,7 +316,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/">Open Integration and Teaming Meeting guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/">Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/">Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/">Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/">Admin &amp; configuration</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/integration-and-teaming-meeting/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Admin &amp; configuration</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="Behavioral health" data-updated-bucket="This month">
           <summary class="thead">
@@ -323,7 +325,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/ires/">Open IRES guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/ires/">302 petitions</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/ires/"><span class="lk-icon lk-guide" aria-hidden="true"></span>302 petitions</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="Justice &amp; reentry" data-updated-bucket="This month">
           <summary class="thead">
@@ -332,7 +334,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/">Open Jail Collaborative guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/">Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/">Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/">Program outcomes</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/">Enrollment &amp; households</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Program outcomes</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/jail-collaborative/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Enrollment &amp; households</a></div></div>
           </div>
         </details><details class="tool" data-family="KIDS" data-progs="Child welfare &amp; youth" data-updated-bucket="This week">
           <summary class="thead">
@@ -341,7 +343,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/">Open KIDS Provider guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/">Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/">Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/">Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/">Fiscal, claims &amp; invoicing</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/">Supervisor &amp; approvals</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reference, FAQs &amp; training</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Referrals &amp; placement</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Fiscal, claims &amp; invoicing</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kids-provider/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Supervisor &amp; approvals</a></div></div>
           </div>
         </details><details class="tool" data-family="KIDS" data-progs="Child welfare &amp; youth" data-updated-bucket="More than a year ago">
           <summary class="thead">
@@ -350,7 +352,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/kidstoo-provider/">Open KIDSTOO Provider guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kidstoo-provider/">Case &amp; service documentation</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/kidstoo-provider/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a></div></div>
           </div>
         </details><details class="tool" data-family="Synergy" data-progs="Behavioral health|Housing &amp; homelessness" data-updated-bucket="This week">
           <summary class="thead">
@@ -359,7 +361,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="mh-residential-landing.html">Open MH Residential guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="mh-res-make-referral.html">Create &amp; complete a referral</a><a href="mh-res-manage-case.html">Manage an active case</a><a href="mh-res-transfers-beds.html">Transfers, beds &amp; outcomes</a><a href="mh-res-find-work.html">Find your work</a><a href="mh-res-documents.html">Documents, sharing &amp; activity</a><a href="mh-res-forms.html">Forms &amp; checklists</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="mh-res-make-referral.html"><span class="lk-icon lk-guide" aria-hidden="true"></span>Create &amp; complete a referral</a><a href="mh-res-manage-case.html"><span class="lk-icon lk-guide" aria-hidden="true"></span>Manage an active case</a><a href="mh-res-transfers-beds.html"><span class="lk-icon lk-guide" aria-hidden="true"></span>Transfers, beds &amp; outcomes</a><a href="mh-res-find-work.html"><span class="lk-icon lk-guide" aria-hidden="true"></span>Find your work</a><a href="mh-res-documents.html"><span class="lk-icon lk-guide" aria-hidden="true"></span>Documents, sharing &amp; activity</a><a href="mh-res-forms.html"><span class="lk-icon lk-guide" aria-hidden="true"></span>Forms &amp; checklists</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="Fiscal &amp; claims" data-updated-bucket="This week">
           <summary class="thead">
@@ -368,7 +370,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/mper/">Open MPER guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mper/">Fiscal, claims &amp; invoicing</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mper/">Case &amp; service documentation</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mper/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Fiscal, claims &amp; invoicing</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/mper/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a></div></div>
           </div>
         </details><details class="tool" data-family="DHS Applications" data-progs="Behavioral health" data-updated-bucket="This month">
           <summary class="thead">
@@ -377,7 +379,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/behavioral-health-critical-incident/">Open OBH Critical Incident Reporting guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/behavioral-health-critical-incident/">Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/behavioral-health-critical-incident/">Reference, FAQs &amp; training</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/behavioral-health-critical-incident/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reports &amp; history</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/behavioral-health-critical-incident/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Reference, FAQs &amp; training</a></div></div>
           </div>
         </details><details class="tool" data-family="Synergy" data-progs="Child welfare &amp; youth" data-updated-bucket="This year">
           <summary class="thead">
@@ -386,7 +388,7 @@
           </summary>
           <div class="topen">
             <a class="btn primary" href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/">Open Youth Support Partners guides →</a>
-            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/">Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/">Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/">Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/">Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/">Supervisor &amp; approvals</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/">Admin &amp; configuration</a></div></div>
+            <div class="jump"><span class="jlab">Jump to a task</span><div class="jlinks"><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Case &amp; service documentation</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Plans &amp; meetings</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Enrollment &amp; households</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Document an assessment</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Supervisor &amp; approvals</a><a href="https://dhsapplicationsupport.alleghenycounty.us/application/youth-support-partners/"><span class="lk-icon lk-guide" aria-hidden="true"></span>Admin &amp; configuration</a></div></div>
           </div>
         </details></div>
       </div>
