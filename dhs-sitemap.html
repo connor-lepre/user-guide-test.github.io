@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DHS Application Support — Site Map</title>
+<title>Site map | DHS Application Support</title>
 <link rel="stylesheet" href="acdhs.css">
 <style>
   .hero{padding:42px 0 6px;}
@@ -13,7 +13,7 @@
   .famhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:2px solid var(--ash);padding-bottom:10px;margin-bottom:18px;flex-wrap:wrap;}
   .famname{font-size:22px;font-weight:700;color:var(--dark-blue);}
   .famdesc{display:block;font-size:14px;color:var(--stone);margin-top:3px;max-width:560px;}
-  .famcount{font-size:13px;font-weight:700;color:var(--blue);white-space:nowrap;}
+  .famcount{font-size:13px;font-weight:700;color:var(--stone);white-space:nowrap;}
   .appgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
   details.app{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
   details.app>summary{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;list-style:none;}
@@ -40,21 +40,20 @@
   .bar{display:grid;grid-template-columns:230px 1fr 32px;align-items:center;gap:12px;margin:7px 0;font-size:13px;}
   .blabel{color:var(--slate);} .bval{color:var(--stone);font-weight:700;text-align:right;}
   .btrack{background:var(--smoke);border-radius:6px;height:14px;overflow:hidden;}
-  .bfill{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--light-blue));border-radius:6px;}
+  .bfill{display:block;height:100%;background:var(--light-blue);border-radius:6px;}
   @media (max-width:680px){.appgrid{grid-template-columns:1fr;} .bar{grid-template-columns:140px 1fr 28px;}}
   @media print{.topbar{position:static;} details.app[open] .abody,details.app .abody{display:block;} details.app>summary .chev{display:none;}}
 </style></head>
 <body>
 <div class="topbar"><div class="wrap">
   <div class="brand">Allegheny County DHS <span>· Application Support</span></div>
-  <nav class="nav"><a href="#">Site map</a><a href="home-redesign.html">Home redesign</a><a href="ansa-landing.html">ANSA redesign</a></nav>
+  <nav class="nav"><a href="index.html">Home</a><a href="dhs-sitemap.html" class="active">Site map</a></nav>
 </div></div>
 
 <main class="wrap">
   <section class="hero">
-    <p class="eyebrow">Information architecture</p>
-    <h1>DHS Application Support — site map</h1>
-    <p class="lede">Every application on dhsapplicationsupport.alleghenycounty.us, grouped by platform family, with the job aids each one carries. Crawled June 2026.</p>
+    <h1>DHS Application Support site map</h1>
+    <p class="lede">Every application on dhsapplicationsupport.alleghenycounty.us, grouped by platform family, with each one’s job aids. Crawled June 2026.</p>
   </section>
 
   <div class="stats">
@@ -65,9 +64,9 @@
   </div>
 
   <div class="legend">
-    <span><span class="dot" style="background:#05DEB4"></span> Already groups its job aids</span>
+    <span><span class="dot" style="background:#05DEB4"></span> Job aids grouped into sections</span>
     <span><span class="dot" style="background:#EDCA91"></span> Flat alphabetical list (no task hierarchy)</span>
-    <span>Tap any application to see its on-site sections.</span>
+    <span>Select an application to see its sections.</span>
   </div>
 
   
@@ -122,7 +121,7 @@
     </section>
     <section class="fam">
       <div class="famhead">
-        <div><span class="famname">Synergy</span><span class="famdesc">Shared Synergy platform powering program-specific case and referral apps.</span></div>
+        <div><span class="famname">Synergy</span><span class="famdesc">Shared platform for program-specific case and referral apps.</span></div>
         <div class="famcount">7 apps · 161 job aids</div>
       </div>
       <div class="appgrid">
@@ -409,13 +408,13 @@
     </section>
 
   <section class="fam">
-    <div class="famhead"><div><span class="famname">If reorganized by task</span><span class="famdesc">The same 373 job aids mapped to a proposed cross-app task taxonomy — what users actually come to do.</span></div></div>
+    <div class="famhead"><div><span class="famname">If reorganized by task</span><span class="famdesc">The same 373 job aids, grouped by task across apps.</span></div></div>
     <div class="reorg"><div class="bar"><span class="blabel">Case &amp; service documentation</span><span class="btrack"><span class="bfill" style="width:100%"></span></span><span class="bval">167</span></div><div class="bar"><span class="blabel">Referrals &amp; placement</span><span class="btrack"><span class="bfill" style="width:21%"></span></span><span class="bval">35</span></div><div class="bar"><span class="blabel">Document an assessment</span><span class="btrack"><span class="bfill" style="width:16%"></span></span><span class="bval">26</span></div><div class="bar"><span class="blabel">Fiscal, claims &amp; invoicing</span><span class="btrack"><span class="bfill" style="width:14%"></span></span><span class="bval">24</span></div><div class="bar"><span class="blabel">Reports &amp; history</span><span class="btrack"><span class="bfill" style="width:13%"></span></span><span class="bval">21</span></div><div class="bar"><span class="blabel">Supervisor &amp; approvals</span><span class="btrack"><span class="bfill" style="width:9%"></span></span><span class="bval">15</span></div><div class="bar"><span class="blabel">Plans &amp; meetings</span><span class="btrack"><span class="bfill" style="width:9%"></span></span><span class="bval">15</span></div><div class="bar"><span class="blabel">Enrollment &amp; households</span><span class="btrack"><span class="bfill" style="width:9%"></span></span><span class="bval">15</span></div><div class="bar"><span class="blabel">Find &amp; register a client</span><span class="btrack"><span class="bfill" style="width:8%"></span></span><span class="bval">13</span></div><div class="bar"><span class="blabel">Reference, FAQs &amp; training</span><span class="btrack"><span class="bfill" style="width:8%"></span></span><span class="bval">13</span></div><div class="bar"><span class="blabel">Program outcomes</span><span class="btrack"><span class="bfill" style="width:8%"></span></span><span class="bval">13</span></div><div class="bar"><span class="blabel">Admin &amp; configuration</span><span class="btrack"><span class="bfill" style="width:5%"></span></span><span class="bval">9</span></div><div class="bar"><span class="blabel">Getting access &amp; signing in</span><span class="btrack"><span class="bfill" style="width:2%"></span></span><span class="bval">4</span></div><div class="bar"><span class="blabel">302 petitions</span><span class="btrack"><span class="bfill" style="width:2%"></span></span><span class="bval">3</span></div></div>
   </section>
 </main>
 
 <footer><div class="wrap">
-  <div class="meta"><b>DHS Application Support — site map</b> · 22 applications · 373 job aids · crawled June 2026<br>Allegheny County Department of Human Services</div>
-  <div class="flinks"><a href="home-redesign.html">Home redesign</a><a href="ansa-landing.html">ANSA redesign</a></div>
+  <div class="meta"><b>DHS Application Support site map</b> · 22 applications · 373 job aids · crawled June 2026<br>Allegheny County Department of Human Services</div>
+  <div class="flinks"><a href="index.html">Home</a><a href="ansa-landing.html">ANSA redesign</a></div>
 </div></footer>
 </body></html>

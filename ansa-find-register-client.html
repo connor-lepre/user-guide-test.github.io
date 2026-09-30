@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find & register a client — ANSA</title>
+<title>Find & register a client | ANSA</title>
 <link rel="stylesheet" href="acdhs.css">
 
 <style>
@@ -18,7 +18,7 @@
   .panel p{margin:0;color:var(--slate);font-size:15px;}
   .access{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--ash);border-left:5px solid var(--light-blue);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin:0 0 38px;}
   .access .ic{width:40px;height:40px;border-radius:10px;background:#EEF0FB;display:flex;align-items:center;justify-content:center;flex:none;}
-  .access .ic svg{width:21px;height:21px;stroke:var(--blue);}
+  .access .ic svg{width:21px;height:21px;stroke:var(--light-blue);}
   .access h3{margin:0 0 4px;font-size:16px;color:var(--dark-blue);}
   .access p{margin:0;color:var(--slate);font-size:15px;}
   .access .corr{margin-top:8px;font-size:13.5px;color:#8a6212;background:#FBF3E2;border-radius:8px;padding:8px 12px;}
@@ -27,17 +27,18 @@
   a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);box-shadow:0 6px 22px rgba(18,18,33,.10);text-decoration:none;}
   .bucket .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
   .bucket .bt{font-size:17px;font-weight:700;color:var(--dark-blue);}
-  .bucket .count{font-size:12px;font-weight:700;color:var(--stone);background:var(--smoke);border:1px solid var(--ash);border-radius:20px;padding:3px 10px;}
   .bucket .bd{font-size:14px;color:var(--slate);margin-bottom:12px;}
   .bucket .aids{font-size:13px;color:var(--stone);margin-top:auto;}
   .bucket .aids span{display:inline-block;background:var(--smoke);border:1px solid var(--ash);border-radius:6px;padding:2px 8px;margin:0 5px 5px 0;color:var(--slate);}
-  .bucket .go{margin-top:12px;font-size:13.5px;font-weight:700;color:var(--blue);}
+  .bucket .foot{margin-top:12px;display:flex;align-items:baseline;gap:12px;}
+  .bucket .steps{font-size:13px;color:var(--stone);}
+  .bucket .go{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--blue);}
   .bucket.soon .go{color:var(--stone);}
   .bucket.feat{border-color:var(--light-blue);}
   .tasklist{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
   .task{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;text-decoration:none;color:inherit;transition:transform .12s,border-color .12s;}
   a.task:hover{transform:translateY(-2px);border-color:var(--light-blue);text-decoration:none;}
-  .task .num{width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .task .num{width:30px;height:30px;border-radius:8px;background:#EEF0FB;color:var(--dark-blue);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none;}
   .task .tt{font-size:17px;font-weight:700;color:var(--dark-blue);margin:0 0 3px;}
   .task .td{font-size:14.5px;color:var(--slate);margin:0;}
   .task .meta{margin-top:9px;display:flex;gap:8px;align-items:center;}
@@ -46,7 +47,7 @@
   section.block{margin-bottom:40px;}
   ol.steps{margin:0;padding-left:0;counter-reset:step;list-style:none;}
   ol.steps li{position:relative;padding:0 0 18px 44px;counter-increment:step;font-size:15.5px;color:var(--black);}
-  ol.steps li::before{content:counter(step);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  ol.steps li::before{content:counter(step);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1.5px var(--ash);color:var(--dark-blue);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;}
   ol.steps li b{color:var(--black);}
   ol.steps li span{display:block;color:var(--stone);font-size:13.5px;margin-top:2px;}
   .results{display:flex;flex-direction:column;gap:10px;}
@@ -66,12 +67,6 @@
   .contacts .row:first-of-type{border-top:none;}
   .contacts dt{flex:0 0 190px;font-weight:700;color:var(--dark-blue);margin:0;}
   .contacts dd{margin:0;color:var(--slate);}
-  .report{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);padding:18px 22px;display:flex;align-items:center;gap:14px;margin-bottom:10px;box-shadow:var(--shadow);}
-  .report .ic{width:38px;height:38px;border-radius:9px;background:#FCEDEC;display:flex;align-items:center;justify-content:center;flex:none;}
-  .report .ic svg{width:20px;height:20px;stroke:#c0564f;}
-  .report b{display:block;font-size:15px;color:var(--black);}
-  .report p{margin:1px 0 0;font-size:13.5px;color:var(--stone);}
-  .report .btn{margin-left:auto;}
   .why{font-size:15px;color:var(--slate);background:var(--smoke);border:1px solid var(--ash);border-radius:10px;padding:14px 18px;margin:0 0 22px;}
   .why b{color:var(--dark-blue);}
   /* combined page: sticky in-page nav + stacked steps */
@@ -79,10 +74,10 @@
   .subnav .lab{font-weight:700;color:var(--stone);text-transform:uppercase;letter-spacing:.5px;font-size:11.5px;}
   .subnav a{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--ash);border-radius:30px;padding:6px 13px;font-weight:700;color:var(--slate);font-size:13.5px;}
   .subnav a:hover{border-color:var(--blue);color:var(--dark-blue);text-decoration:none;}
-  .subnav a .n{width:19px;height:19px;border-radius:50%;background:var(--blue);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-  .stepsec{scroll-margin-top:120px;background:var(--white);border:1px solid var(--ash);border-top:4px solid var(--blue);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 24px;margin-bottom:14px;}
+  .subnav a .n{width:19px;height:19px;border-radius:50%;background:#EEF0FB;color:var(--dark-blue);font-size:11px;display:flex;align-items:center;justify-content:center;}
+  .stepsec{scroll-margin-top:120px;background:var(--white);border:1px solid var(--ash);border-top:4px solid var(--light-blue);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 24px;margin-bottom:14px;}
   .stephead{display:flex;align-items:center;gap:14px;padding:20px 0 4px;flex-wrap:wrap;}
-  .stephead .bignum{width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .stephead .bignum{width:34px;height:34px;border-radius:9px;background:#EEF0FB;color:var(--dark-blue);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none;}
   .stephead h2{margin:0;font-size:23px;}
   .stephead .tag{margin-left:auto;}
   .stepsec h3{font-size:15px;color:var(--dark-blue);margin:22px 0 10px;letter-spacing:.2px;}
@@ -93,28 +88,27 @@
   .pre b{color:var(--dark-blue);}
   @media (max-width:680px){
     .twocol,.buckets{grid-template-columns:1fr;}
-    .report{flex-wrap:wrap;} .report .btn{margin-left:0;width:100%;}
     .contacts dt{flex-basis:130px;} .access{flex-wrap:wrap;}
     .subnav{top:56px;} .stephead .tag{margin-left:0;}
   }
+  .report{font-size:13.5px;color:var(--stone);margin:18px 0 0;}
 </style>
 
 </head><body>
 <div class="topbar"><div class="wrap-narrow">
   <div class="brand">Allegheny County DHS <span>· Application Support</span></div>
-  <nav class="nav" aria-label="Sections"><a href="dhs-sitemap.html">Site map</a><a href="home-redesign.html">Get help</a><a href="ansa-landing.html" class="active">ANSA</a></nav>
+  <nav class="nav" aria-label="Sections"><a href="index.html">Home</a><a href="dhs-sitemap.html">Site map</a><a href="ansa-landing.html" class="active">ANSA</a></nav>
 </div></div><div class="notice"><div class="wrap-narrow">
-  <span class="dot" aria-hidden="true"></span><span>Source job aids dated 2013 and still reference the KIDS login. Steps below are reframed; confirm screen labels in the current Okta build.</span>
+  <span class="dot" aria-hidden="true"></span><span>The source job aids are dated 2013 and reference the KIDS login. Confirm screen labels in the current Okta version.</span>
 </div></div><main class="wrap-narrow">
-  <div class="crumb"><a href="dhs-sitemap.html">All tools</a> › <a href="ansa-landing.html">ANSA</a> › <b>Find &amp; register a client</b></div>
+  <div class="crumb"><a href="index.html">Home</a> › <a href="ansa-landing.html">ANSA</a> › <b>Find &amp; register a client</b></div>
   <section class="hero">
-    <p class="eyebrow">ANSA · Task guide</p>
     <h1>Find &amp; register a client</h1>
-    <p class="lede">One continuous task: search for the client first, and register a new one only if the search comes back empty. Both steps live on this page.</p>
-    <div class="trust"><div><div class="k">Tool</div><div class="v">ANSA</div></div><div><div class="k">Last reviewed</div><div class="v">2013 — source</div></div><div><div class="k">Status</div><div class="v warn">Needs review</div></div><div><div class="k">Maintained by</div><div class="v">App Support</div></div></div>
+    <p class="lede">Search for the client first. Register a new client only if the search returns no match.</p>
+    <div class="trust"><div><div class="k">Tool</div><div class="v">ANSA</div></div><div><div class="k">Last reviewed</div><div class="v">2013 (source job aids)</div></div><div><div class="k">Status</div><div class="v warn">Needs review</div></div><div><div class="k">Maintained by</div><div class="v">App Support</div></div></div>
   </section>
 
-  <div class="why"><b>Why the order matters.</b> Every client lives in the county’s Master Client Index (MCI). If you register without searching, you can create a second record for someone who already exists — splitting their history. So you always search first; you only register when there’s truly no match.</div>
+  <div class="why"><b>Search before you register.</b> Each client has one record in the county’s Master Client Index (MCI). Registering without searching can create a duplicate record and split the client’s history. Register only when the search finds no match.</div>
 
   <nav class="subnav" aria-label="On this page">
     <span class="lab">On this page</span>
@@ -129,29 +123,29 @@
       <h2>Search for a client</h2>
       <span class="tag role">DHS Providers</span>
     </div>
-    <p style="color:var(--slate);margin:2px 0 0;font-size:15px">Searching changes nothing in the system, so it’s always safe to run — and it’s what tells you whether to open an existing client or move on to registration.</p>
+    <p style="color:var(--slate);margin:2px 0 0;font-size:15px">Searching does not change any records. The results show whether to open an existing client or register a new one.</p>
 
     <h3>Steps</h3>
     <ol class="steps">
       <li><b>Open the client search.</b><span>Sign in through Okta, open the assessment tile, then go to the CANS / ANSA menu and choose <b>Client &gt; Search</b>.</span></li>
-      <li><b>Set how each field should match.</b><span>For First and Last Name, pick a match type: <b>Sounds Like</b>, <b>Starts With</b>, or <b>Is</b>. “Sounds Like” casts the widest net and is the safest first try.</span></li>
+      <li><b>Set how each field should match.</b><span>For First and Last Name, pick a match type: <b>Sounds Like</b>, <b>Starts With</b>, or <b>Is</b>. “Sounds Like” returns the most results and is the recommended first search.</span></li>
       <li><b>Enter what you know.</b><span>Only <b>Last Name</b> is required. Add Date of Birth, Gender, SSN, or MCI number to narrow the results.</span></li>
-      <li><b>Select Search and read the result.</b><span>You’ll get either a list of matches or a “No Match Found” message — see below.</span></li>
+      <li><b>Select Search and read the result.</b><span>The search returns either a list of matches or a “No Match Found” message, described below.</span></li>
     </ol>
 
-    <h3>What your result means</h3>
+    <h3>Search results</h3>
     <div class="results">
-      <div class="res"><span class="tag ok">Matches</span><div><p class="rt">One or more clients are listed</p><p>Open a row to check the <b>Info</b>, <b>Address</b>, and <b>Assessment History</b> tabs and confirm it’s the right person. When you’re sure, select the row and choose <b>Show</b> to bring that client into focus. You’re done — no need to register.</p></div></div>
-      <div class="res"><span class="tag new">No match</span><div><p class="rt">“No Match Found”</p><p>Select <b>OK</b>, then continue to <a href="#register"><b>Step 2 · Register a new client</b></a> just below.</p></div></div>
+      <div class="res"><span class="tag ok">Matches</span><div><p class="rt">One or more clients are listed</p><p>Open a row to check the <b>Info</b>, <b>Address</b>, and <b>Assessment History</b> tabs and confirm it’s the right person. Once confirmed, select the row and choose <b>Show</b> to open that client. No registration is needed.</p></div></div>
+      <div class="res"><span class="tag new">No match</span><div><p class="rt">“No Match Found”</p><p>Select <b>OK</b>, then continue to <a href="#register"><b>Step 2 · Register a new client</b></a> below.</p></div></div>
     </div>
 
-    <h3>If something goes wrong</h3>
+    <h3>Troubleshooting</h3>
     <div class="recover">
       <div class="rh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg> What to do</div>
       <table>
-        <tr><td>No results, but you expect the person to exist</td><td><span class="chk">Try again</span> — loosen the match to <b>Sounds Like</b> and search on Last Name only. Spelling and nicknames are the usual culprits.</td></tr>
-        <tr><td>Too many results to tell them apart</td><td><span class="chk">Narrow</span> — add Date of Birth or SSN, then use the Info and Assessment History tabs to confirm.</td></tr>
-        <tr><td>Opened the wrong client with Show</td><td><span class="yes">Recoverable</span> — selecting Show changes nothing. Return to Client &gt; Search and run it again.</td></tr>
+        <tr><td>No results, but you expect the person to exist</td><td><span class="chk">Try again</span> Change the match type to <b>Sounds Like</b> and search on Last Name only. Spelling differences and nicknames are the most common cause.</td></tr>
+        <tr><td>Too many results to tell them apart</td><td><span class="chk">Narrow</span> Add Date of Birth or SSN, then use the Info and Assessment History tabs to confirm.</td></tr>
+        <tr><td>Opened the wrong client with Show</td><td><span class="yes">Recoverable</span> Selecting Show does not change any records. Return to Client &gt; Search and search again.</td></tr>
       </table>
     </div>
   </section>
@@ -165,8 +159,8 @@
       <h2>Register a new client</h2>
       <span class="tag role">DHS Providers</span>
     </div>
-    <p class="pre" style="margin-top:14px">Start here <b>only after</b> a <a href="#search">search</a> returns “No Match Found.” The <b>New</b> button doesn’t turn on until a search has run — that’s by design.</p>
-    <p style="color:var(--slate);margin:0 0 4px;font-size:15px">The <b>Verify Individual</b> step is your safety check: it compares what you typed against everyone already in MCI, so a person who exists under a slightly different spelling still gets caught before a duplicate is created.</p>
+    <p class="pre" style="margin-top:14px">Start here <b>only after</b> a <a href="#search">search</a> returns “No Match Found.” The <b>New</b> button is not available until a search has run.</p>
+    <p style="color:var(--slate);margin:0 0 4px;font-size:15px">The <b>Verify Individual</b> step compares your entry against existing MCI records. This identifies a person recorded under a slightly different spelling before a duplicate is created.</p>
 
     <h3>Steps</h3>
     <ol class="steps">
@@ -179,31 +173,27 @@
       <li><b>Select Save.</b><span>The client is registered and ready to assess.</span></li>
     </ol>
 
-    <h3>If something goes wrong</h3>
+    <h3>Troubleshooting</h3>
     <div class="recover">
       <div class="rh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg> What to do</div>
       <table>
-        <tr><td>Verify Individual returns a 95%+ match but you believe it’s a different person</td><td><span class="chk">Check first</span> — open the match and compare DOB and SSN. If it truly is someone else, contact the Service Desk for an override; don’t force a duplicate.</td></tr>
-        <tr><td>You registered someone who turned out to already exist</td><td><span class="yes">Recoverable</span> — call the Service Desk (412-350-4357) to merge or correct the records.</td></tr>
-        <tr><td>The address won’t validate against Postal</td><td><span class="chk">Option</span> — if you’ve confirmed it’s right, use <b>Save Without Verification</b> rather than altering a correct address.</td></tr>
-        <tr><td>The New button is greyed out</td><td><span class="yes">Expected</span> — run a <a href="#search">search</a> first. New only enables after a search has run.</td></tr>
+        <tr><td>Verify Individual returns a 95%+ match but you believe it’s a different person</td><td><span class="chk">Check first</span> Open the match and compare DOB and SSN. If it is a different person, contact the Service Desk for an override instead of creating a duplicate record.</td></tr>
+        <tr><td>You registered someone who turned out to already exist</td><td><span class="yes">Recoverable</span> Call the Service Desk (412-350-4357) to merge or correct the records.</td></tr>
+        <tr><td>The address won’t validate against Postal</td><td><span class="chk">Option</span> If the address is correct, use <b>Save Without Verification</b> instead of changing it.</td></tr>
+        <tr><td>The New button is greyed out</td><td><span class="yes">Expected</span> Run a <a href="#search">search</a> first. The New button becomes available after a search has run.</td></tr>
       </table>
     </div>
   </section>
 
   <section class="block">
     <div class="contacts">
-      <div style="padding:16px 22px 4px"><h2 style="font-size:20px;margin:0">Need help?</h2></div>
+      <div style="padding:16px 22px 4px"><h2 style="font-size:20px;margin:0">Support</h2></div>
       <dl style="margin:0;padding:4px 0 14px">
         <div class="row"><dt>Service Desk</dt><dd>412-350-4357 · <a href="mailto:servicedesk@alleghenycounty.us">servicedesk@alleghenycounty.us</a></dd></div>
         <div class="row"><dt>Self-Service Tool</dt><dd><a href="http://servicedesk.alleghenycounty.us">servicedesk.alleghenycounty.us</a></dd></div>
       </dl>
     </div>
-    <div class="report">
-  <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></div>
-  <div><b>Out of date or doesn’t match your screen?</b><p>These guides predate the Okta sign-in. Tell us and Application Support will re-check them against the current build.</p></div>
-  <button class="btn">Report an issue</button>
-</div>
+    <p class="report">Several guides predate the current application versions. If content is inaccurate, please <a href="mailto:dhs-servicedesk@alleghenycounty.us?subject=Guide%20issue%3A%20Find%20%26%20register%20a%20client%20%E2%80%94%20ANSA">report an issue</a>.</p>
   </section>
 </main><footer><div class="wrap-narrow">
   <div class="meta"><b>ANSA</b> › Find &amp; register a client · Source job aids dated 2013<br>Allegheny County Department of Human Services</div>
