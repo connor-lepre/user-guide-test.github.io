@@ -63,11 +63,11 @@ a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);box-sha
 .stage-guides{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;align-items:start;}
 .stage-guides li{display:grid;grid-template-columns:15px 1fr;column-gap:8px;}
 .stage-guides li>div{display:flex;flex-direction:column;min-width:0;}
-.stage-guides a{font-size:14.5px;font-weight:700;line-height:1.35;color:var(--dark-blue);}
+.stage-guides a{font-size:13px;font-weight:700;line-height:1.35;color:var(--dark-blue);}
 .stage-guides a:hover{color:var(--blue);text-decoration:underline;}
 .gi{width:15px;height:15px;fill:none;stroke:var(--stone);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.stage-guides .gi{margin-top:3px;}
-.g-meta{font-size:12.5px;color:var(--stone);}
+.stage-guides .gi{margin-top:1px;}
+.g-meta{font-size:12px;color:var(--stone);}
 .bystage-key{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:6px 16px;margin:0 0 8px;font-size:12px;color:var(--stone);}
 .bystage-key span{display:inline-flex;align-items:center;gap:5px;}
 .bystage-key .gi{width:13px;height:13px;}
