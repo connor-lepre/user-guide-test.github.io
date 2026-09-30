@@ -2,79 +2,22 @@
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Find & register a client | ANSA</title>
-<link rel="stylesheet" href="acdhs.css">
+<link rel="stylesheet" href="acdhs.css"><link rel="stylesheet" href="tool-page.css">
 
 <style>
-  .notice{background:var(--yellow);color:#5c4112;}
-  .notice .wrap-narrow{display:flex;align-items:center;gap:10px;padding:9px 24px;font-size:13.5px;font-weight:700;}
-  .notice .dot{width:8px;height:8px;border-radius:50%;background:#8a6212;flex:none;}
-  .notice a{color:#5c4112;text-decoration:underline;}
-  .hero{padding:34px 0 8px;}
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 30px;}
-  .panel{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;}
-  .panel h3{margin:0 0 10px;font-size:15px;font-weight:700;color:var(--dark-blue);letter-spacing:.2px;}
-  .panel ul{margin:0;padding-left:18px;color:var(--slate);font-size:15px;}
-  .panel ul li{margin-bottom:7px;}
-  .panel p{margin:0;color:var(--slate);font-size:15px;}
-  .access{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--ash);border-left:5px solid var(--light-blue);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin:0 0 38px;}
-  .access .ic{width:40px;height:40px;border-radius:10px;background:#EEF0FB;display:flex;align-items:center;justify-content:center;flex:none;}
-  .access .ic svg{width:21px;height:21px;stroke:var(--light-blue);}
-  .access h3{margin:0 0 4px;font-size:16px;color:var(--dark-blue);}
-  .access p{margin:0;color:var(--slate);font-size:15px;}
-  .access .corr{margin-top:8px;font-size:13.5px;color:#8a6212;background:#FBF3E2;border-radius:8px;padding:8px 12px;}
-  .buckets{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
-  .bucket{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;text-decoration:none;color:inherit;transition:transform .12s,box-shadow .12s,border-color .12s;}
-  a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);box-shadow:0 6px 22px rgba(18,18,33,.10);text-decoration:none;}
-  .bucket .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-  .bucket .bt{font-size:17px;font-weight:700;color:var(--dark-blue);}
-  .bucket .bd{font-size:14px;color:var(--slate);margin-bottom:12px;}
   .bucket .aids{font-size:13px;color:var(--stone);margin-top:auto;}
   .bucket .aids span{display:inline-block;background:var(--smoke);border:1px solid var(--ash);border-radius:6px;padding:2px 8px;margin:0 5px 5px 0;color:var(--slate);}
   .bucket .foot{margin-top:12px;display:flex;align-items:baseline;gap:12px;}
-  .bucket .steps{font-size:13px;color:var(--stone);}
-  .bucket .go{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--blue);}
   .bucket.soon .go{color:var(--stone);}
   .bucket.feat{border-color:var(--light-blue);}
-  .tasklist{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
-  .task{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;text-decoration:none;color:inherit;transition:transform .12s,border-color .12s;}
-  a.task:hover{transform:translateY(-2px);border-color:var(--light-blue);text-decoration:none;}
-  .task .num{width:30px;height:30px;border-radius:8px;background:#EEF0FB;color:var(--dark-blue);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none;}
-  .task .tt{font-size:17px;font-weight:700;color:var(--dark-blue);margin:0 0 3px;}
-  .task .td{font-size:14.5px;color:var(--slate);margin:0;}
-  .task .meta{margin-top:9px;display:flex;gap:8px;align-items:center;}
-  .task .go{margin-left:auto;align-self:center;color:var(--light-blue);font-weight:700;font-size:20px;}
-  /* steps + result + recovery (shared with guide pages) */
+  /* ANSA guide components: step sections, results, bridge */
   section.block{margin-bottom:40px;}
-  ol.steps{margin:0;padding-left:0;counter-reset:step;list-style:none;}
-  ol.steps li{position:relative;padding:0 0 18px 44px;counter-increment:step;font-size:15.5px;color:var(--black);}
-  ol.steps li::before{content:counter(step);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1.5px var(--ash);color:var(--dark-blue);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;}
-  ol.steps li b{color:var(--black);}
   ol.steps li span{display:block;color:var(--stone);font-size:13.5px;margin-top:2px;}
   .results{display:flex;flex-direction:column;gap:10px;}
   .res{background:var(--white);border:1px solid var(--ash);border-radius:10px;padding:15px 18px;display:flex;gap:14px;align-items:flex-start;}
   .res .rt{font-size:15px;font-weight:700;color:var(--black);margin:0 0 2px;}
   .res p{margin:0;font-size:14.5px;color:var(--slate);}
   .res p b{color:var(--dark-blue);}
-  .recover{border:1px solid var(--ash);border-radius:10px;overflow:hidden;}
-  .recover .rh{background:var(--dark-blue);color:#fff;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:11px 16px;display:flex;align-items:center;gap:9px;}
-  .recover table{width:100%;border-collapse:collapse;font-size:14px;}
-  .recover td{padding:11px 16px;border-top:1px solid var(--ash);vertical-align:top;color:var(--slate);}
-  .recover tr td:first-child{font-weight:700;color:var(--black);width:38%;}
-  .recover .yes{display:inline-block;font-weight:700;color:var(--dark-blue);background:#EAF9F4;padding:2px 9px;border-radius:6px;font-size:12.5px;}
-  .recover .chk{display:inline-block;font-weight:700;color:#8a6212;background:#FBF3E2;padding:2px 9px;border-radius:6px;font-size:12.5px;}
-  .contacts{background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:34px;}
-  .contacts .row{display:flex;gap:18px;padding:13px 22px;border-top:1px solid var(--smoke);font-size:15px;}
-  .contacts .row:first-of-type{border-top:none;}
-  .contacts dt{flex:0 0 190px;font-weight:700;color:var(--dark-blue);margin:0;}
-  .contacts dd{margin:0;color:var(--slate);}
-  .why{font-size:15px;color:var(--slate);background:var(--smoke);border:1px solid var(--ash);border-radius:10px;padding:14px 18px;margin:0 0 22px;}
-  .why b{color:var(--dark-blue);}
-  /* combined page: sticky in-page nav + stacked steps */
-  .subnav{position:sticky;top:60px;z-index:10;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:rgba(245,245,255,.92);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid var(--ash);border-radius:30px;padding:8px 14px;margin:0 0 26px;}
-  .subnav .lab{font-weight:700;color:var(--stone);text-transform:uppercase;letter-spacing:.5px;font-size:11.5px;}
-  .subnav a{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--ash);border-radius:30px;padding:6px 13px;font-weight:700;color:var(--slate);font-size:13.5px;}
-  .subnav a:hover{border-color:var(--blue);color:var(--dark-blue);text-decoration:none;}
-  .subnav a .n{width:19px;height:19px;border-radius:50%;background:#EEF0FB;color:var(--dark-blue);font-size:11px;display:flex;align-items:center;justify-content:center;}
   .stepsec{scroll-margin-top:120px;background:var(--white);border:1px solid var(--ash);border-top:4px solid var(--light-blue);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 24px;margin-bottom:14px;}
   .stephead{display:flex;align-items:center;gap:14px;padding:20px 0 4px;flex-wrap:wrap;}
   .stephead .bignum{width:34px;height:34px;border-radius:9px;background:#EEF0FB;color:var(--dark-blue);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none;}
@@ -86,12 +29,7 @@
   .bridge::before,.bridge::after{content:"";height:1px;background:var(--ash);flex:1;}
   .pre{font-size:14.5px;color:var(--slate);background:var(--smoke);border:1px solid var(--ash);border-left:5px solid var(--light-blue);border-radius:10px;padding:13px 16px;margin:0 0 6px;}
   .pre b{color:var(--dark-blue);}
-  @media (max-width:680px){
-    .twocol,.buckets{grid-template-columns:1fr;}
-    .contacts dt{flex-basis:130px;} .access{flex-wrap:wrap;}
-    .subnav{top:56px;} .stephead .tag{margin-left:0;}
-  }
-  .report{font-size:13.5px;color:var(--stone);margin:18px 0 0;}
+  @media (max-width:680px){.contacts dt{flex-basis:130px;} .subnav{top:56px;} .stephead .tag{margin-left:0;}}
 </style>
 
 </head><body>
