@@ -55,7 +55,7 @@ a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);box-sha
 .stage-k{display:flex;align-items:flex-start;gap:10px;}
 .stage-n{flex:none;width:20px;height:20px;margin-top:1px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--stone);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;line-height:1;color:var(--stone);}
 .anytime .stage-n{box-shadow:none;border:1px dashed var(--stone);}
-.stage-name{margin:0;font-size:14.5px;line-height:1.35;font-weight:700;color:var(--slate);}
+.stage-name{margin:0;font-size:14.5px;line-height:1.35;font-weight:500;color:var(--slate);}
 .stage-q{display:block;font-size:12px;color:var(--stone);}
 /* links: navy rather than the action blue, so a long list stays calm; icon marks guide vs step */
 .stage-guides{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
