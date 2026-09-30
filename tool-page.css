@@ -71,7 +71,7 @@ a.bucket:hover{transform:translateY(-2px);border-color:var(--light-blue);box-sha
 .bystage-key{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:6px 16px;margin:0 0 8px;font-size:12px;color:var(--stone);}
 .bystage-key span{display:inline-flex;align-items:center;gap:5px;}
 .bystage-key .gi{width:13px;height:13px;}
-.stage-empty{margin:0;font-size:13.5px;color:var(--stone);padding-top:1px;}
+.stage-empty{margin:0;font-size:13px;color:var(--stone);padding-top:1px;}
 
 /* task guide: screen cards */
 .screen{scroll-margin-top:150px;background:var(--white);border:1px solid var(--ash);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden;}
